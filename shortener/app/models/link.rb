@@ -5,8 +5,12 @@ class Link < ApplicationRecord
 
 	def format_original_url
 		uri = URI.parse(original_url || "")
-		if uri.host.nill?
+		if uri.host.nil?
 			errors.add(:original_url, "invalid URL format")
 		end		
+	end
+
+	def shortened_url
+		"http://localhost:300/links/#{short_url}"
 	end
 end

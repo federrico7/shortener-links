@@ -1,5 +1,7 @@
 var shortUrl = "<%= @link.short_url %>";
 console.log(shortUrl)
 
+var shortLink = "htpp://localhost:300/links/" + shortUrl
+
 var element = document.getElementByID('short-link ');
-element.innerHTML= shortUrl;
+element.innerHTML = "<%= @link.shortened_url %>";
